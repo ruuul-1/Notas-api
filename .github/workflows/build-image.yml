@@ -29,6 +29,9 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
+          push: true
           target: production
           platforms: linux/amd64,linux/arm64
-          tags: ${{ secrets.DOCKER_HUB_USER }}/notasapp:latest
+          tags: |
+            ${{ secrets.DOCKER_HUB_USER }}/notasapp:latest
+            ${{ secrets.DOCKER_HUB_USER }}/notasapp:${{ github.sha }}
