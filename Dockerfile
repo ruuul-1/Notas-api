@@ -15,3 +15,7 @@ CMD ["flask", "--app", "run", "run", "--debug"]
 FROM base AS production
 EXPOSE 8000
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "run:app"]
+
+
+
+
